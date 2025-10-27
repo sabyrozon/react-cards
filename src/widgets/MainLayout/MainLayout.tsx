@@ -1,14 +1,15 @@
 import Header from "../Header";
 import Footer from "../Footer";
+import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   return (
     <div className="h-screen flex flex-col">
       <Header />
-      <div className="h-full flex flex-col grow justify-between gap-5 overflow-y-hidden">
-        <main className="px-[20px]">main</main>
-        <Footer />
-      </div>
+      <main className="flex-1 px-[20px] overflow-y-auto">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   )
 }
